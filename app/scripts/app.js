@@ -5,15 +5,21 @@ angular
     'ngCookies',
     'ngResource',
     'ngSanitize',
-    'ngRoute'
+    'ngRoute',
+    'UserApp'	
   ])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        controller: 'MainCtrl',
+		public: true
       })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/',
+		public: true
       });
+  })
+  .run(function(user, $location) {
+    user.init({ appId: '53a70241af6fd' });
   });
