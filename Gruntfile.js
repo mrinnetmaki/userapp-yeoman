@@ -147,7 +147,7 @@ module.exports = function (grunt) {
     bowerInstall: {
       app: {
         src: ['<%= yeoman.app %>/index.html'],
-        ignorePath: '<%= yeoman.app %>/'
+        ignorePath: new RegExp('^<%= yeoman.app %>/')
       }
     },
 
